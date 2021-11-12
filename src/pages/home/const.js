@@ -1,0 +1,1 @@
+export const API_URL = "https://murmuring-tundra-31743.herokuapp.com/movies/3/trending/movie/day?api_key=4ba2c80bd43f2892ecb3349fa445015f"

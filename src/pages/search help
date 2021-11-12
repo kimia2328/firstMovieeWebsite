@@ -1,0 +1,26 @@
+useEffect(() => {
+      setLoading(true)
+      fetch(`https://murmuring-tundra-31743.herokuapp.com/movies/3/search/multi?api_key=4ba2c80bd43f2892ecb3349fa445015f&language=en-US&page=1&include_adult=false&query=${search}`)
+      .then((response => {
+        return response.json();
+      }))
+      .then( data => {
+        setLoading(false);
+        setMovies(data);
+      })
+      .catch(error => {
+        setLoading(false);
+        console.log(error);
+      })  
+    },[search])
+    const changeEvent=(e)=>{
+      setSearch(e.target.value);
+      console.log(e.target.value);
+    }
+
+    <form>
+        <input placeholder="Movie Or Show Name" className="search" type="text" onChange={changeEvent}></input>
+    </form>
+
+
+    <p>IMDB :{` ${Math.ceil(vote_average)}`}</p>
